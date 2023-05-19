@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bg color changer</title>
+</head>
+
+<body>
+        <div class="form-control">
+            <input type="value" id="color" required="">
+            <label>
+                <span style="transition-delay:0ms">E</span><span style="transition-delay:50ms">n</span><span
+                    style="transition-delay:100ms">t</span><span style="transition-delay:150ms">e</span><span
+                    style="transition-delay:200ms">r</span>
+            </label>
+        </div>
+        <button class="btn">Change color</button>
+    <script>
+        const body = document.querySelector('body');
+        const colorInput = document.querySelector('#color')
+        const color_btn = document.querySelector('.btn')
+
+        color_btn.addEventListener('click', ()=>{
+            body.style.backgroundColor = colorInput.value
+        })
+    </script>
+</body>
+
+<style>
+    .form-control {
+        position: relative;
+        margin: 20px 0 40px;
+        width: 190px;
+    }
+
+    .form-control input {
+        background-color: transparent;
+        border: 0;
+        border-bottom: 2px #212121 solid;
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #212121;
+    }
+
+    .form-control input:focus,
+    .form-control input:valid {
+        outline: 0;
+        border-bottom-color: #252525;
+    }
+
+    .form-control label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        pointer-events: none;
+    }
+
+    .form-control label span {
+        display: inline-block;
+        font-size: 18px;
+        min-width: 5px;
+        color: #212121;
+        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .form-control input:focus+label span,
+    .form-control input:valid+label span {
+        color: #252525;
+        transform: translateY(-30px);
+    }
+
+    button {
+        color: #090909;
+        padding: 0.7em 1.7em;
+        font-size: 18px;
+        border-radius: 0.5em;
+        background: #e8e8e8;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+        box-shadow: 6px 6px 12px #c5c5c5,
+            -6px -6px 12px #ffffff;
+        cursor: pointer;
+    }
+
+    button:active {
+        color: #666;
+        box-shadow: inset 4px 4px 12px #c5c5c5,
+            inset -4px -4px 12px #ffffff;
+    }
+</style>
+
+</html>
